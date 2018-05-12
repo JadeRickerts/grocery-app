@@ -1,0 +1,29 @@
+<% include ../partials/header.ejs %>
+
+<div class="container">
+    <!--The header - JUMBOTRON-->
+    <header class="jumbotron">
+        <div class="container">
+            <h1>Welcome To Grocery App</h1>
+            <p>Keep track of your groceries</p>
+            <p>
+                <a class="btn btn-primary btn-large" href="/new">Add New Product</a>
+            </p>
+        </div>
+    </header>
+    <div class="row" style="display: flex, flex-wrap: wrap">
+        <% products.forEach(function(product){ %>
+            <div class="col-md-3 col-sm-6">
+                <div class="thumbnail">
+                    <h4><%= product.brand %> <%= product.description %></h4>
+                    <img src="<%= product.imageURL %>">
+                    <h4><%= product.packSize %></h4>
+                    <h4><%= product.category %></h4>
+                    <p><a href="#" class="btn btn-primary">More Info</a></p>
+                </div>
+            </div>
+        <% });%>
+    </div>
+</div>
+
+<% include ../partials/footer %>

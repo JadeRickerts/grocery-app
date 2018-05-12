@@ -3,13 +3,23 @@ var express = require("express");
 var router = express.Router();
 var Product = require("../models/product.js");
 
-//ADD PRODUCTS ROUTE
+//INDEX ROUTE
+router.get("/", function(req, res){
+    Product.find({}, function(err, allProducts){
+        if (err) {
+            console.log(err);
+        } else {
+            res.render("products/index.ejs", {products: allProducts})
+        }
+    })
+})
+
+//ADD ROUTE
 router.get("/new", function(req, res){
     res.render("products/new.ejs");
 });
 
 //CREATE ROUTE
-//Create Product
 router.post("/", function(req, res){
     //Create a new object with the variables taken from the form.
     var newProduct = {

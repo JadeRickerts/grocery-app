@@ -15,6 +15,10 @@ var productSchema = new mongoose.Schema({
   dateAdded: {
       type: Date,
       default: Date.now
+  },
+  imageURL: {
+      type: String,
+      default: "http://fhprovisions.com/wp-content/uploads/2016/11/cutlery-smaller.png"
   }
 });
 
