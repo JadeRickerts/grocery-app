@@ -1,0 +1,16 @@
+h1 {
+    text-align: center;
+}
+
+#addProductForm {
+    width: 30%; 
+    margin: 25px auto
+}
+
+#packSizeL {
+    padding-left: 0px;
+}
+
+#packSizeR {
+    padding-right: 0px;
+}

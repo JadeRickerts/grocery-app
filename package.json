@@ -1,0 +1,16 @@
+{
+  "name": "grocery-app",
+  "version": "1.0.0",
+  "description": "grocery shopping web application",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jade Rickerts",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "ejs": "^2.6.1",
+    "express": "^4.16.3"
+  }
+}
