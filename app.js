@@ -2,10 +2,12 @@
 var express     = require("express"),
 app             = express(),
 bodyParser      = require("body-parser"),
+mongoose        = require("mongoose"),
+Product         = require("./models/product.js"),
 path 		        = require('path');
 
 //DATABASE CONFIG
-// mongoose.connect('mongodb://localhost/grocery');
+mongoose.connect('mongodb://localhost/grocery');
 
 //SETTINGS
 app.use(bodyParser.urlencoded({extended: true}));
