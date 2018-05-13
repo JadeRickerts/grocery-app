@@ -7,7 +7,7 @@
             <h1>Welcome To Grocery App</h1>
             <p>Keep track of your groceries</p>
             <p>
-                <a class="btn btn-primary btn-large" href="/new">Add New Product</a>
+                <a class="btn btn-primary btn-large" href="/products/new">Add New Product</a>
             </p>
         </div>
     </header>
@@ -17,9 +17,10 @@
                 <div class="thumbnail">
                     <h4><%= product.brand %> <%= product.description %></h4>
                     <img src="<%= product.imageURL %>">
-                    <h4><%= product.packSize %></h4>
+                    <h4><%= product.packSize %> <%=product.uom%></h4>
                     <h4><%= product.category %></h4>
-                    <p><a href="#" class="btn btn-primary">More Info</a></p>
+                    <span><a href="#" class="btn btn-primary">More Info</a></span>
+                    <span><a href="/products/<%=product._id%>/edit" class="btn btn-warning">Edit</a></span>
                 </div>
             </div>
         <% });%>

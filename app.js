@@ -3,6 +3,7 @@ var express     = require("express"),
 app             = express(),
 bodyParser      = require("body-parser"),
 mongoose        = require("mongoose"),
+methodOverride  = require("method-override"),
 Product         = require("./models/product.js"),
 path 		        = require('path');
 
@@ -16,11 +17,14 @@ app.use(bodyParser.urlencoded({extended: true}));
 //Serve public folder - path setup
 app.use(express.static(path.join(__dirname, 'public')));
 
+//METHOD OVERRIDE FOR ROUTES (PUT & DELETE)
+app.use(methodOverride("_method"));
+
 //REQUIRED ROUTES
-var indexRoutes = require("./routes/products");
+var productRoutes = require("./routes/products");
 
 //ROUTES
-app.use(indexRoutes);
+app.use("/products", productRoutes);
 
 //SERVER CONFIG
 app.listen(3000, function(){
