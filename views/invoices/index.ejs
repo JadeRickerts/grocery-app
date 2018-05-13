@@ -1,0 +1,30 @@
+<% include ../partials/header.ejs %>
+
+<div class="container">
+    <!--The header - JUMBOTRON-->
+    <header class="jumbotron">
+        <div class="container">
+            <h1>Welcome To Grocery App</h1>
+            <p>Keep track of your groceries</p>
+            <p>
+                <a class="btn btn-primary btn-large" href="/products/new">Add New Invoices</a>
+            </p>
+        </div>
+    </header>
+    <div class="row" style="display: flex, flex-wrap: wrap">
+        <% invoices.forEach(function(invoice){ %>
+            <div class="col-md-3 col-sm-6">
+                <div class="thumbnail">
+                    <h4><%= invoice.invoiceNumber %> - <%= invoice.invoiceDate %></h4>
+                    <img src="<%= invoice.imageURL %>">
+                    <h4><%= invoice.amount %></h4>
+                    <h4><%= invoice.shop %></h4>
+                    <span><a href="#" class="btn btn-primary">More Info</a></span>
+                    <span><a href="/invoices/<%=invoice._id%>/products" class="btn btn-warning">Add Products</a></span>
+                </div>
+            </div>
+        <% });%>
+    </div>
+</div>
+
+<% include ../partials/footer %>
