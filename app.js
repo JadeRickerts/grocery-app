@@ -5,6 +5,7 @@ bodyParser      = require("body-parser"),
 mongoose        = require("mongoose"),
 methodOverride  = require("method-override"),
 Product         = require("./models/product.js"),
+invoiceRoutes   = require("./models/invoice.js"),
 path 		        = require('path');
 
 //DATABASE CONFIG
@@ -21,10 +22,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride("_method"));
 
 //REQUIRED ROUTES
-var productRoutes = require("./routes/products");
+var productRoutes = require("./routes/products"),
+invoiceRoutes     = require("./routes/invoices");
+
 
 //ROUTES
 app.use("/products", productRoutes);
+app.use("/invoices", invoiceRoutes);
 
 //SERVER CONFIG
 app.listen(3000, function(){

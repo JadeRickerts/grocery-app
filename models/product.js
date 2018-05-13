@@ -22,5 +22,5 @@ var productSchema = new mongoose.Schema({
   }
 });
 
-//BET MODEL
+//PRODUCT MODEL
 module.exports = mongoose.model("Product", productSchema);
