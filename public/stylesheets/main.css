@@ -14,3 +14,7 @@ h1 {
 #packSizeR {
     padding-right: 0px;
 }
+
+.product-heading {
+    font-weight: bold;
+}
